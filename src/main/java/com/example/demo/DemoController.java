@@ -13,6 +13,6 @@ public class DemoController {
 
     @GetMapping("/test")
     public String getMessage(@RequestParam String message) {
-        return "hello, " + message;
+        return "2019 hello, " + message;
     }
 }
