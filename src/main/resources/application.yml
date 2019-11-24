@@ -1,0 +1,18 @@
+# 数据源
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/gp?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+
+# mybatis托管mapper文件
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 80
+
+logging:
+  level:
+    com.funds.mapper: debug
