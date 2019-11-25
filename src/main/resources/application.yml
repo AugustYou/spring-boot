@@ -15,4 +15,4 @@ server:
 
 logging:
   level:
-    com.funds.mapper: debug
+    com.funds: debug

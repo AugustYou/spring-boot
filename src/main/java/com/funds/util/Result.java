@@ -1,9 +1,12 @@
 package com.funds.util;
 
+import lombok.Data;
+
 /**
  * @author tuzhijin
  * @version Id: Result.java, v 0.1 2019/11/24 23:39 tuzhijin Exp $$
  */
+@Data
 public class Result {
 
     private Integer code;
