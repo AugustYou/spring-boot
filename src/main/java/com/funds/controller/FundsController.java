@@ -42,7 +42,7 @@ public class FundsController {
 
     @GetMapping("/getData")
     public Result getData() {
-        String url = "www.bai.com";
+        String url = "http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code=110022&page=2&per=40";
         String result;
         try {
             result = httpAPIService.doGet(url);
