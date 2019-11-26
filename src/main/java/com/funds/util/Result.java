@@ -28,4 +28,8 @@ public class Result {
         this.data = data;
     }
 
+    public Result(Integer code, Object data) {
+        this.code = code;
+        this.data = data;
+    }
 }

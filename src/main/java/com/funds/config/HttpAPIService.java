@@ -20,10 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 80004508
- * @date 2019/11/25 19:11
- */
+
 @Slf4j
 public class HttpAPIService {
     private static final String EXCEPTION_MSG_PATTERN = "接口异常信息：{}";

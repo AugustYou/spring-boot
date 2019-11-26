@@ -1,6 +1,9 @@
 package com.funds.service;
 
+import com.funds.Bo.FundsBo;
 import com.funds.domain.FundDetail;
+
+import java.util.Map;
 
 /**
  * @author tuzhijin
@@ -10,4 +13,5 @@ public interface IFundsService {
 
     int insertSelective(FundDetail record);
 
+    Map<String, Object> calculateAvgRate(FundsBo fundsBo);
 }

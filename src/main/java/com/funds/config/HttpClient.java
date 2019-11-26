@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author 80004508
- * @date 2019/11/25 19:09
- */
+
 @Configuration
 public class HttpClient {
 

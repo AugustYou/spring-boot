@@ -2,11 +2,11 @@ package com.funds.dao;
 
 import com.funds.domain.FundDetail;
 import com.funds.domain.FundDetailExample;
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @Mapper
@@ -32,4 +32,7 @@ public interface FundDetailMapper {
     int updateByPrimaryKeySelective(FundDetail record);
 
     int updateByPrimaryKey(FundDetail record);
+
+    List<FundDetail> calculateAvgRate(@Param("startDate") String startDate,
+                                      @Param("endDate") String endDate);
 }

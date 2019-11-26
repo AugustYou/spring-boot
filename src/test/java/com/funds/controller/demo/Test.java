@@ -1,10 +1,18 @@
 package com.funds.controller.demo;
 
+import com.alibaba.fastjson.JSON;
+import com.funds.Bo.Business;
+import com.funds.Bo.FundsBo;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author tuzhijin
@@ -13,12 +21,17 @@ import org.jsoup.select.Elements;
 public class Test {
 
     public static void main(String[] args) {
-        getdatas();
-//        String code = "110022";
-//        Integer page = 1;
-//        StringBuilder url = new StringBuilder("http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code=");
-//        url.append(code).append("&page=").append(page).append("&per=40");
-//        System.out.println(url.toString());
+//        getdatas();
+        List list = new ArrayList();
+        FundsBo bo = new FundsBo();
+        bo.setStartDate("2019-10-12");
+        bo.setEndDate("2019-11-18");
+        Business business = new Business();
+        business.setFcode("160216");
+        business.setRatio("0.5");
+        list.add(business);
+        bo.setLists(list);
+        System.out.println(JSON.toJSON(bo));
     }
 
     private static void getdatas() {
