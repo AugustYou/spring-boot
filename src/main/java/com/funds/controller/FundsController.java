@@ -95,7 +95,7 @@ public class FundsController {
                     service.insertSelective(fundDetail);
                 }
                 log.info("插入数据数:{}", list.size());
-//                Thread.sleep(1000 * 60);
+                Thread.sleep(1000 * 10);
             }
         } catch (Exception e) {
             throw new RuntimeException("远程异常");
