@@ -2,7 +2,7 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://106.52.100.234:3306/Finance?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      url: jdbc:mysql://********:3306/******?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: "******"
       password: "******"
       driver-class-name: com.mysql.jdbc.Driver
