@@ -4,6 +4,8 @@ import com.funds.Bo.Business;
 import com.funds.Bo.FundsBo;
 import com.funds.dao.FundDetailMapper;
 import com.funds.domain.FundDetail;
+import com.google.common.util.concurrent.RateLimiter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +20,13 @@ import java.util.Map;
  * @version Id: FundsServiceImpl.java, v 0.1 2019/11/24 23:23 tuzhijin Exp $$
  */
 @Service
+@Slf4j
 public class FundsServiceImpl implements IFundsService {
 
     @Autowired
     private FundDetailMapper fundDetailMapper;
+
+    RateLimiter limiter = RateLimiter.create(200.0);
 
     @Override
     public int insertSelective(FundDetail record) {
@@ -31,6 +36,8 @@ public class FundsServiceImpl implements IFundsService {
     @Override
     public Map<String, Object> calculateAvgRate(FundsBo fundsBo) {
         Map map = new HashMap();
+        double acquire = limiter.acquire();
+        log.info("获取令牌成功!,消耗{}", acquire);
         List<FundDetail> list = fundDetailMapper.calculateAvgRate(fundsBo.getStartDate(), fundsBo.getEndDate());
         BigDecimal totalDgr = new BigDecimal(0.0);
         try {
